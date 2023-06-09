@@ -1,0 +1,29 @@
+By DongRi-ChunShang
+SPS:
+0x0 header identifier
+0x1 ?
+0x2 ?
+0x3 compression flag 0xc=XAS
+0x4 block identifier
+0x5 channel count (this number/4+1 represents the number of channels)
+0x6-7 sampling rate ushort
+0x8 block identifier
+0x9-B Number of Samples
+0xC block identifier
+Total number of 0xD-F blocks (this number/0x4c)/number of channels)
+0x10-13??
+0x14-?? EA-ADPCM-XAS
+The last four characters (-4 represents the fourth to last character)
+0x (-4) tail identifier (already 0x45)
+0x (-3) - (-1)??
+SNR:
+0x0 header identifier (already 0x04)
+0x1 channel count (this number/4+1 represents the number of channels)
+0x2-3 sampling rate
+0x4 block identifier
+0x5-7 Number of samples (can calculate the size after decoding (number of samples * number of channels * 2))
+0x8 block identifier
+0x9-B Compress the actual data size (excluding the container)
+0xC block identifier
+0xD-F? (Same as the number of samples for channel 1)
+0x10-?? EA-ADPCM-XAS
