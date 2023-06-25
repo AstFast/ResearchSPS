@@ -1,3 +1,4 @@
+@echo off 
 :temp
 echo.	1.encode(БрТы)	2.decode(НтТы)
 choice /c:12 /m:"please select"

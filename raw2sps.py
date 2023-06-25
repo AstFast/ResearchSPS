@@ -1,21 +1,18 @@
 '''
 
--.py -en [input file] [out file] [sample rate] [channels] [samples per channel]
+-.py [input file] [out file] [sample rate] [channels] [samples per channel]
 
 '''
 import sys
-f=open(sys.argv[2], mode='rb')
+f=open(sys.argv[1], mode='rb')
 data = f.read()
 f.close()
 size = len(data)
 print(size)
-d=open(sys.argv[3], mode='wb')
-samplerate =int(sys.argv[4])
-channels = int(sys.argv[5])
-samples_per_channel = int(sys.argv[6])
-"""if (sys.argv[3][0:] == "en"):
-	print("OK")
-"""
+d=open(sys.argv[2], mode='wb')
+samplerate =int(sys.argv[3])
+channels = int(sys.argv[4])
+samples_per_channel = int(sys.argv[5])
 d.write(b"\x48\x00\x00\x0C")
 d.write(b"\x14")
 d.write(((channels-1)*4).to_bytes(1,byteorder='big', signed=False))

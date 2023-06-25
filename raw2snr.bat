@@ -25,4 +25,4 @@ echo. 请输入采样点数
 set /p f=
 if [%f%]==[] goto temp6
 :temp3
-raw2snr.py -en  "%b%" "%c%" "%d%" "%e%" "%f%"
+raw2snr.py "%b%" "%c%" "%d%" "%e%" "%f%"
